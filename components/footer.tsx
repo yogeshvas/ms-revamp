@@ -121,34 +121,36 @@ const links = [
 
 export default function FooterSection() {
   return (
-    <footer className="border-b border-t w-full bg-white pt-20 dark:bg-transparent">
+    <footer className="border-b border-t w-full bg-primary pt-20">
       <div className="mx-auto px-7 sm:px-20">
         <div className="grid gap-12 md:grid-cols-5">
           <div className="md:col-span-2">
             <Link
               href="/"
               aria-label="go home"
-              className=" flex flex-col items-center  size-fit"
+              className="flex flex-col items-center size-fit"
             >
               <Image
-                src={"/red-logo.png"}
+                src={"/logo-white.png"}
                 width={80}
                 height={80}
                 alt={"logo"}
               />
-              <p className="font-semibold">Mamastops</p>
+              <p className="font-semibold text-primary-foreground">Mamastops</p>
             </Link>
           </div>
 
           <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 md:col-span-3">
             {links.map((link, index) => (
               <div key={index} className="space-y-4 text-sm">
-                <span className="block font-medium">{link.group}</span>
+                <span className="block font-medium text-primary-foreground">
+                  {link.group}
+                </span>
                 {link.items.map((item, index) => (
                   <Link
                     key={index}
                     href={item.href}
-                    className="text-muted-foreground hover:text-primary block duration-150"
+                    className="text-primary-foreground hover:text-gray-300 block duration-150"
                   >
                     <span>{item.title}</span>
                   </Link>
@@ -157,8 +159,8 @@ export default function FooterSection() {
             ))}
           </div>
         </div>
-        <div className="mt-12 flex flex-wrap items-end justify-between gap-6 border-t py-6">
-          <span className="text-muted-foreground order-last block text-center text-sm md:order-first">
+        <div className="mt-12 flex flex-wrap items-end justify-between gap-6 border-t border-border py-6">
+          <span className="text-primary-foreground order-last block text-center text-sm md:order-first">
             © {new Date().getFullYear()} Mamastops, All rights reserved
           </span>
           <div className="order-first flex flex-wrap justify-center gap-6 text-sm md:order-last">
@@ -167,7 +169,7 @@ export default function FooterSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X/Twitter"
-              className="text-muted-foreground hover:text-primary block"
+              className="text-primary-foreground hover:text-muted-foreground block"
             >
               <svg
                 className="size-6"
@@ -187,7 +189,7 @@ export default function FooterSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="LinkedIn"
-              className="text-muted-foreground hover:text-primary block"
+              className="text-primary-foreground hover:text-muted-foreground block"
             >
               <svg
                 className="size-6"
@@ -207,7 +209,7 @@ export default function FooterSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Facebook"
-              className="text-muted-foreground hover:text-primary block"
+              className="text-primary-foreground hover:text-muted-foreground block"
             >
               <svg
                 className="size-6"
@@ -227,7 +229,7 @@ export default function FooterSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Threads"
-              className="text-muted-foreground hover:text-primary block"
+              className="text-primary-foreground hover:text-muted-foreground block"
             >
               <svg
                 className="size-6"
@@ -252,7 +254,7 @@ export default function FooterSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="text-muted-foreground hover:text-primary block"
+              className="text-primary-foreground hover:text-muted-foreground block"
             >
               <svg
                 className="size-6"
@@ -272,7 +274,7 @@ export default function FooterSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="TikTok"
-              className="text-muted-foreground hover:text-primary block"
+              className="text-primary-foreground hover:text-muted-foreground block"
             >
               <svg
                 className="size-6"
