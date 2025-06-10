@@ -1,6 +1,7 @@
 /** @format */
 
 import { Logo } from "@/components/logo";
+import Image from "next/image";
 import Link from "next/link";
 
 const links = [
@@ -120,12 +121,22 @@ const links = [
 
 export default function FooterSection() {
   return (
-    <footer className="border-b w-full bg-white pt-20 dark:bg-transparent">
+    <footer className="border-b border-t w-full bg-white pt-20 dark:bg-transparent">
       <div className="mx-auto px-7 sm:px-20">
         <div className="grid gap-12 md:grid-cols-5">
           <div className="md:col-span-2">
-            <Link href="/" aria-label="go home" className="block size-fit">
-              <Logo />
+            <Link
+              href="/"
+              aria-label="go home"
+              className=" flex flex-col items-center  size-fit"
+            >
+              <Image
+                src={"/red-logo.png"}
+                width={80}
+                height={80}
+                alt={"logo"}
+              />
+              <p className="font-semibold">Mamastops</p>
             </Link>
           </div>
 
