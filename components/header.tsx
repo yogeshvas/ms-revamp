@@ -25,22 +25,35 @@ export const Header = () => {
     },
     {
       title: "Product",
-      description: "Managing a small business today is already tough.",
+      description:
+        "All our products that will come handy for your logistic buisness.",
       items: [
         {
-          title: "Reports",
+          title: "GPS Tracing",
           href: "/reports",
         },
         {
-          title: "Statistics",
+          title: "ERP",
           href: "/statistics",
         },
         {
-          title: "Dashboards",
+          title: "Cashless Service",
           href: "/dashboards",
         },
         {
-          title: "Recordings",
+          title: "Supply Chain Finance",
+          href: "/recordings",
+        },
+        {
+          title: "Supply Chain Finance",
+          href: "/recordings",
+        },
+        {
+          title: "Border Clearence",
+          href: "/recordings",
+        },
+        {
+          title: "Visit Flows",
           href: "/recordings",
         },
       ],
@@ -147,12 +160,9 @@ export const Header = () => {
                                 <NavigationMenuLink
                                   href={subItem.href}
                                   key={subItem.title}
-                                  className="flex items-center justify-between hover:bg-muted py-2 px-3 rounded-md transition-colors group"
+                                  className="flex  justify-between hover:bg-muted py-2 px-3 rounded-md transition-colors group"
                                 >
-                                  <span className="text-sm">
-                                    {subItem.title}
-                                  </span>
-                                  <MoveRight className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors" />
+                                  <p className="text-sm">{subItem.title}</p>
                                 </NavigationMenuLink>
                               ))}
                             </div>
