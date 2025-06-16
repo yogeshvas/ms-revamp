@@ -32,7 +32,8 @@ const DynamicContent = () => {
 
   // Get content based on the product ID, default to product 1 if not found
   const productId = id ? parseInt(id as string) : 1;
-  const currentContent = contentData[productId] || contentData[1];
+  const currentContent =
+    contentData[productId as keyof typeof contentData] || contentData[1];
 
   // Handle case where product doesn't exist
   if (!currentContent) {
