@@ -7,7 +7,6 @@ import { Header } from "./header";
 const HeroSection = () => {
   return (
     <>
-      <Header />
       <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         <video
           autoPlay

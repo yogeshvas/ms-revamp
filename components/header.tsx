@@ -15,8 +15,12 @@ import { Menu, MoveRight, X } from "lucide-react";
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export const Header = () => {
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
+
   const navigationItems = [
     {
       title: "Home",
@@ -24,40 +28,41 @@ export const Header = () => {
       description: "",
     },
     {
-      title: "Product",
-      description:
-        "All our products that will come handy for your logistic buisness.",
-      items: [
-        {
-          title: "GPS Tracing",
-          href: "/reports",
-        },
-        {
-          title: "ERP",
-          href: "/statistics",
-        },
-        {
-          title: "Cashless Service",
-          href: "/dashboards",
-        },
-        {
-          title: "Supply Chain Finance",
-          href: "/recordings",
-        },
-        {
-          title: "Supply Chain Finance",
-          href: "/recordings",
-        },
-        {
-          title: "Border Clearence",
-          href: "/recordings",
-        },
-        {
-          title: "Visit Flows",
-          href: "/recordings",
-        },
-      ],
+      title: "Products",
+      href: "/products",
+      description: "",
     },
+    // {
+    //   title: "Product",
+    //   description:
+    //     "All our products that will come handy for your logistic business.",
+    //   items: [
+    //     {
+    //       title: "GPS Tracing",
+    //       href: "/reports",
+    //     },
+    //     {
+    //       title: "ERP",
+    //       href: "/statistics",
+    //     },
+    //     {
+    //       title: "Cashless Service",
+    //       href: "/dashboards",
+    //     },
+    //     {
+    //       title: "Supply Chain Finance",
+    //       href: "/recordings",
+    //     },
+    //     {
+    //       title: "Border Clearance",
+    //       href: "/recordings",
+    //     },
+    //     {
+    //       title: "Visit Flows",
+    //       href: "/recordings",
+    //     },
+    //   ],
+    // },
     {
       title: "Company",
       description: "Managing a small business today is already tough.",
@@ -86,22 +91,25 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
+    if (!isHomePage) {
+      setIsScrolled(false);
+      return;
+    }
+
     const handleScroll = () => {
-      // Trigger the background change when user scrolls past the hero section (100vh)
       const scrollPosition = window.scrollY;
       const heroHeight = window.innerHeight;
-
-      setIsScrolled(scrollPosition > heroHeight * 0.1); // Change at 10% of viewport height
+      setIsScrolled(scrollPosition > heroHeight * 0.1);
     };
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   return (
     <header
       className={`w-full z-40 fixed top-0 left-0 border-b transition-all duration-300 ${
-        isScrolled
+        isHomePage && isScrolled
           ? "bg-white/95 backdrop-blur-md border-gray-200"
           : "bg-white/10 backdrop-blur-sm border-white/20"
       }`}
@@ -120,9 +128,11 @@ export const Header = () => {
                           <Button
                             variant="ghost"
                             className={`font-medium transition-colors ${
-                              isScrolled
+                              isHomePage && isScrolled
                                 ? "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
-                                : "text-white hover:text-gray-200 hover:bg-white/20"
+                                : isHomePage
+                                ? "text-white hover:text-gray-200 hover:bg-white/20"
+                                : "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
                             }`}
                           >
                             {item.title}
@@ -133,9 +143,11 @@ export const Header = () => {
                       <>
                         <NavigationMenuTrigger
                           className={`font-medium text-sm bg-transparent transition-colors ${
-                            isScrolled
+                            isHomePage && isScrolled
                               ? "text-gray-900 hover:bg-gray-100"
-                              : "text-white hover:bg-white/20"
+                              : isHomePage
+                              ? "text-white hover:bg-white/20"
+                              : "text-gray-900 hover:bg-gray-100"
                           }`}
                         >
                           {item.title}
@@ -160,7 +172,7 @@ export const Header = () => {
                                 <NavigationMenuLink
                                   href={subItem.href}
                                   key={subItem.title}
-                                  className="flex  justify-between hover:bg-muted py-2 px-3 rounded-md transition-colors group"
+                                  className="flex justify-between hover:bg-muted py-2 px-3 rounded-md transition-colors group"
                                 >
                                   <p className="text-sm">{subItem.title}</p>
                                 </NavigationMenuLink>
@@ -187,7 +199,11 @@ export const Header = () => {
             />
             <p
               className={`font-semibold text-lg sm:text-xl transition-colors ${
-                isScrolled ? "text-gray-900" : "text-white"
+                isHomePage && isScrolled
+                  ? "text-gray-900"
+                  : isHomePage
+                  ? "text-white"
+                  : "text-gray-900"
               }`}
             >
               Mamastops
@@ -199,16 +215,22 @@ export const Header = () => {
             <Button
               variant="ghost"
               className={`hidden md:inline-flex transition-colors ${
-                isScrolled
+                isHomePage && isScrolled
                   ? "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
-                  : "text-white hover:text-gray-200 hover:bg-white/20"
+                  : isHomePage
+                  ? "text-white hover:text-gray-200 hover:bg-white/20"
+                  : "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
               }`}
             >
               Book a demo
             </Button>
             <div
               className={`hidden md:block w-px h-6 transition-colors ${
-                isScrolled ? "bg-gray-200" : "bg-white/30"
+                isHomePage && isScrolled
+                  ? "bg-gray-200"
+                  : isHomePage
+                  ? "bg-white/30"
+                  : "bg-gray-200"
               }`}
             ></div>
             <Button size="sm" className="sm:size-default">
@@ -225,9 +247,11 @@ export const Header = () => {
               size="sm"
               onClick={() => setOpen(!isOpen)}
               className={`p-2 transition-colors ${
-                isScrolled
+                isHomePage && isScrolled
                   ? "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
-                  : "text-white hover:text-gray-200 hover:bg-white/20"
+                  : isHomePage
+                  ? "text-white hover:text-gray-200 hover:bg-white/20"
+                  : "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
               }`}
             >
               {isOpen ? (
@@ -243,9 +267,11 @@ export const Header = () => {
         {isOpen && (
           <div
             className={`lg:hidden border-t transition-colors ${
-              isScrolled
+              isHomePage && isScrolled
                 ? "bg-white border-gray-200"
-                : "bg-white/95 backdrop-blur-md border-white/20"
+                : isHomePage
+                ? "bg-white/95 backdrop-blur-md border-white/20"
+                : "bg-white border-gray-200"
             }`}
           >
             <div className="px-4 py-6 space-y-6">
@@ -255,7 +281,11 @@ export const Header = () => {
                     <Link
                       href={item.href}
                       className={`flex items-center justify-between py-2 transition-colors ${
-                        isScrolled ? "text-gray-900" : "text-gray-900"
+                        isHomePage && isScrolled
+                          ? "text-gray-900"
+                          : isHomePage
+                          ? "text-gray-900"
+                          : "text-gray-900"
                       }`}
                       onClick={() => setOpen(false)}
                     >
@@ -268,7 +298,11 @@ export const Header = () => {
                     <>
                       <p
                         className={`text-base font-medium transition-colors ${
-                          isScrolled ? "text-gray-900" : "text-gray-900"
+                          isHomePage && isScrolled
+                            ? "text-gray-900"
+                            : isHomePage
+                            ? "text-gray-900"
+                            : "text-gray-900"
                         }`}
                       >
                         {item.title}
