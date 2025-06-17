@@ -333,10 +333,12 @@ export const Header = () => {
 
               {/* Mobile CTA Buttons */}
               <div className="pt-4 border-t space-y-3">
-                <Button variant="outline" className="w-full">
+                <Button
+                  onClick={() => router.push("/contact")}
+                  className="w-full"
+                >
                   Book a demo
                 </Button>
-                <Button className="w-full">Get started</Button>
               </div>
             </div>
           </div>
