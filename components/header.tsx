@@ -16,11 +16,12 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export const Header = () => {
   const pathname = usePathname();
   const isHomePage = pathname === "/";
-
+  const router = useRouter();
   const navigationItems = [
     {
       title: "Home",
@@ -71,14 +72,7 @@ export const Header = () => {
           title: "About us",
           href: "/about",
         },
-        {
-          title: "Fundraising",
-          href: "/fundraising",
-        },
-        {
-          title: "Investors",
-          href: "/investors",
-        },
+
         {
           title: "Contact us",
           href: "/contact",
@@ -189,7 +183,10 @@ export const Header = () => {
           </div>
 
           {/* Center - Logo */}
-          <div className="flex items-center gap-2 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2">
+          <div
+            onClick={() => router.replace("/")}
+            className="flex items-center gap-2 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2"
+          >
             <Image
               src="/red-logo.png"
               width={30}
@@ -213,6 +210,7 @@ export const Header = () => {
           {/* Right side - CTA Buttons */}
           <div className="hidden sm:flex items-center gap-3">
             <Button
+              onClick={() => router.push("/contact")}
               variant="ghost"
               className={`hidden md:inline-flex transition-colors ${
                 isHomePage && isScrolled
@@ -233,7 +231,11 @@ export const Header = () => {
                   : "bg-gray-200"
               }`}
             ></div>
-            <Button size="sm" className="sm:size-default">
+            <Button
+              onClick={() => router.push("/products")}
+              size="sm"
+              className="sm:size-default"
+            >
               Get started
             </Button>
           </div>

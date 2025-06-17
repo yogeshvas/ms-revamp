@@ -1,10 +1,12 @@
 /** @format */
-
+"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { Header } from "./header";
+import { useRouter } from "next/navigation";
 
 const HeroSection = () => {
+  const router = useRouter();
   return (
     <>
       <div className="relative w-full h-screen flex items-center justify-center overflow-hidden">
@@ -26,6 +28,7 @@ const HeroSection = () => {
             Streamline your logistics business with our innovative solutions.
           </p>
           <Button
+            onClick={() => router.push("/products")}
             size="lg"
             className="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
           >
