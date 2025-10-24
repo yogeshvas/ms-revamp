@@ -39,9 +39,7 @@ export default function IntegrationsSection() {
             <div className="mt-auto grid grid-cols-[auto_1fr] gap-3">
               <div className="bg-background flex aspect-square items-center justify-center ">
                 <Image
-                  src={
-                    "https://media.licdn.com/dms/image/v2/C4D03AQGudLGag68zig/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1516588103467?e=1755129600&v=beta&t=ATbMpmLtgRD5ktD5bPilYzPdGSD7bxzg_5ebOZkRxmw"
-                  }
+                  src={"/ceo.jpeg"}
                   className="border rounded-full object-cover"
                   width={80}
                   height={80}
@@ -49,7 +47,10 @@ export default function IntegrationsSection() {
                 />
               </div>
               <blockquote>
-                <p>A line of thought by Hanuamath Sir, kind of like slogan</p>
+                <p>
+                  Our dreams die not because of our lack of potential, but our
+                  lack of action despite it.
+                </p>
                 <div className="mt-2 flex gap-2 text-sm">
                   <cite>Hanumant Lal Shukla</cite>
                   <p className="text-muted-foreground">Founder, Mamastops</p>

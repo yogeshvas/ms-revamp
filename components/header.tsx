@@ -1,5 +1,4 @@
 /** @format */
-
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -30,49 +29,30 @@ export const Header = () => {
     },
     {
       title: "Products",
-      href: "/products",
-      description: "",
+      description: "All our products for your logistic business.",
+      items: [
+        {
+          title: "Border Clearance Service",
+          href: "/products/1",
+        },
+        {
+          title: "GPS Tracking Solution",
+          href: "/products/2",
+        },
+        {
+          title: "Fleet Management",
+          href: "/products/3",
+        },
+      ],
     },
-    // {
-    //   title: "Product",
-    //   description:
-    //     "All our products that will come handy for your logistic business.",
-    //   items: [
-    //     {
-    //       title: "GPS Tracing",
-    //       href: "/reports",
-    //     },
-    //     {
-    //       title: "ERP",
-    //       href: "/statistics",
-    //     },
-    //     {
-    //       title: "Cashless Service",
-    //       href: "/dashboards",
-    //     },
-    //     {
-    //       title: "Supply Chain Finance",
-    //       href: "/recordings",
-    //     },
-    //     {
-    //       title: "Border Clearance",
-    //       href: "/recordings",
-    //     },
-    //     {
-    //       title: "Visit Flows",
-    //       href: "/recordings",
-    //     },
-    //   ],
-    // },
     {
       title: "Company",
-      description: "Managing a small business today is already tough.",
+      description: "Learn more about Mamastops",
       items: [
         {
           title: "About us",
           href: "/about",
         },
-
         {
           title: "Contact us",
           href: "/contact",
@@ -86,14 +66,13 @@ export const Header = () => {
 
   useEffect(() => {
     if (!isHomePage) {
-      setIsScrolled(false);
+      setIsScrolled(true);
       return;
     }
 
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const heroHeight = window.innerHeight;
-      setIsScrolled(scrollPosition > heroHeight * 0.1);
+      setIsScrolled(scrollPosition > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -103,9 +82,9 @@ export const Header = () => {
   return (
     <header
       className={`w-full z-40 fixed top-0 left-0 border-b transition-all duration-300 ${
-        isHomePage && isScrolled
-          ? "bg-white/95 backdrop-blur-md border-gray-200"
-          : "bg-white/10 backdrop-blur-sm border-white/20"
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md border-red-100"
+          : "bg-transparent border-transparent"
       }`}
     >
       <div className="container relative mx-auto px-4 sm:px-6 lg:px-8">
@@ -122,11 +101,9 @@ export const Header = () => {
                           <Button
                             variant="ghost"
                             className={`font-medium transition-colors ${
-                              isHomePage && isScrolled
-                                ? "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
-                                : isHomePage
-                                ? "text-white hover:text-gray-200 hover:bg-white/20"
-                                : "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
+                              isScrolled
+                                ? "text-gray-900 hover:text-red-600 hover:bg-red-50"
+                                : "text-white hover:text-red-900 hover:bg-white/20"
                             }`}
                           >
                             {item.title}
@@ -137,38 +114,44 @@ export const Header = () => {
                       <>
                         <NavigationMenuTrigger
                           className={`font-medium text-sm bg-transparent transition-colors ${
-                            isHomePage && isScrolled
-                              ? "text-gray-900 hover:bg-gray-100"
-                              : isHomePage
-                              ? "text-white hover:bg-white/20"
-                              : "text-gray-900 hover:bg-gray-100"
+                            isScrolled
+                              ? "text-gray-900 hover:text-red-600 hover:bg-red-50"
+                              : "text-white hover:text-red-100 hover:bg-white/20"
                           }`}
                         >
                           {item.title}
                         </NavigationMenuTrigger>
-                        <NavigationMenuContent className="!w-[450px] p-4">
+                        <NavigationMenuContent className="!w-[450px] p-4 border-red-100">
                           <div className="grid grid-cols-2 gap-4">
                             <div className="flex flex-col justify-between">
                               <div className="space-y-2">
-                                <p className="text-base font-medium">
+                                <p className="text-base font-medium text-gray-900">
                                   {item.title}
                                 </p>
-                                <p className="text-muted-foreground text-sm leading-relaxed">
+                                <p className="text-gray-600 text-sm leading-relaxed">
                                   {item.description}
                                 </p>
                               </div>
-                              <Button size="sm" className="mt-6 w-fit">
+                              <Button
+                                size="sm"
+                                className="mt-6 w-fit bg-red-600 hover:bg-red-700"
+                                onClick={() => router.push("/contact")}
+                              >
                                 Book a call today
                               </Button>
                             </div>
                             <div className="space-y-1">
                               {item.items?.map((subItem) => (
-                                <NavigationMenuLink
-                                  href={subItem.href}
-                                  key={subItem.title}
-                                  className="flex justify-between hover:bg-muted py-2 px-3 rounded-md transition-colors group"
-                                >
-                                  <p className="text-sm">{subItem.title}</p>
+                                <NavigationMenuLink asChild key={subItem.title}>
+                                  <Link
+                                    href={subItem.href}
+                                    className="flex justify-between hover:bg-red-50 py-2 px-3 rounded-md transition-colors group border border-transparent hover:border-red-100"
+                                  >
+                                    <p className="text-sm text-gray-700 group-hover:text-red-600">
+                                      {subItem.title}
+                                    </p>
+                                    <MoveRight className="w-4 h-4 text-gray-400 group-hover:text-red-500" />
+                                  </Link>
                                 </NavigationMenuLink>
                               ))}
                             </div>
@@ -184,8 +167,8 @@ export const Header = () => {
 
           {/* Center - Logo */}
           <div
-            onClick={() => router.replace("/")}
-            className="flex items-center gap-2 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2"
+            onClick={() => router.push("/")}
+            className="flex items-center gap-2 lg:absolute lg:left-1/2 lg:transform lg:-translate-x-1/2 cursor-pointer"
           >
             <Image
               src="/red-logo.png"
@@ -196,11 +179,7 @@ export const Header = () => {
             />
             <p
               className={`font-semibold text-lg sm:text-xl transition-colors ${
-                isHomePage && isScrolled
-                  ? "text-gray-900"
-                  : isHomePage
-                  ? "text-white"
-                  : "text-gray-900"
+                isScrolled ? "text-gray-900" : "text-white"
               }`}
             >
               Mamastops
@@ -211,37 +190,24 @@ export const Header = () => {
           <div className="hidden sm:flex items-center gap-3">
             <Button
               onClick={() => router.push("/contact")}
-              variant="ghost"
-              className={`hidden md:inline-flex transition-colors ${
-                isHomePage && isScrolled
-                  ? "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
-                  : isHomePage
-                  ? "text-white hover:text-gray-200 hover:bg-white/20"
-                  : "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
-              }`}
+              size="sm"
+              className="sm:size-default bg-red-600 hover:bg-red-700"
             >
               Book a demo
             </Button>
-            <div
-              className={`hidden md:block w-px h-6 transition-colors ${
-                isHomePage && isScrolled
-                  ? "bg-gray-200"
-                  : isHomePage
-                  ? "bg-white/30"
-                  : "bg-gray-200"
-              }`}
-            ></div>
+          </div>
+
+          {/* Mobile Get Started Button */}
+          <div className="flex sm:hidden">
             <Button
-              onClick={() => router.push("/products")}
               size="sm"
-              className="sm:size-default"
+              className="bg-red-600 hover:bg-red-700"
+              onClick={() => router.push("/products")}
             >
               Get started
             </Button>
           </div>
-          <div className="flex sm:hidden">
-            <Button size="sm">Get started</Button>
-          </div>
+
           {/* Mobile menu button */}
           <div className="flex sm:hidden">
             <Button
@@ -249,11 +215,9 @@ export const Header = () => {
               size="sm"
               onClick={() => setOpen(!isOpen)}
               className={`p-2 transition-colors ${
-                isHomePage && isScrolled
-                  ? "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
-                  : isHomePage
-                  ? "text-white hover:text-gray-200 hover:bg-white/20"
-                  : "text-gray-900 hover:text-gray-700 hover:bg-gray-100"
+                isScrolled
+                  ? "text-gray-900 hover:text-red-600 hover:bg-red-50"
+                  : "text-white hover:text-red-100 hover:bg-white/20"
               }`}
             >
               {isOpen ? (
@@ -267,46 +231,24 @@ export const Header = () => {
 
         {/* Mobile Navigation Menu */}
         {isOpen && (
-          <div
-            className={`lg:hidden border-t transition-colors ${
-              isHomePage && isScrolled
-                ? "bg-white border-gray-200"
-                : isHomePage
-                ? "bg-white/95 backdrop-blur-md border-white/20"
-                : "bg-white border-gray-200"
-            }`}
-          >
+          <div className="lg:hidden border-t bg-white border-red-100">
             <div className="px-4 py-6 space-y-6">
               {navigationItems.map((item) => (
                 <div key={item.title} className="space-y-3">
                   {item.href ? (
                     <Link
                       href={item.href}
-                      className={`flex items-center justify-between py-2 transition-colors ${
-                        isHomePage && isScrolled
-                          ? "text-gray-900"
-                          : isHomePage
-                          ? "text-gray-900"
-                          : "text-gray-900"
-                      }`}
+                      className="flex items-center justify-between py-2 text-gray-900 hover:text-red-600 transition-colors"
                       onClick={() => setOpen(false)}
                     >
                       <span className="text-base font-medium">
                         {item.title}
                       </span>
-                      <MoveRight className="w-4 h-4 text-muted-foreground" />
+                      <MoveRight className="w-4 h-4 text-gray-400" />
                     </Link>
                   ) : (
                     <>
-                      <p
-                        className={`text-base font-medium transition-colors ${
-                          isHomePage && isScrolled
-                            ? "text-gray-900"
-                            : isHomePage
-                            ? "text-gray-900"
-                            : "text-gray-900"
-                        }`}
-                      >
+                      <p className="text-base font-medium text-gray-900">
                         {item.title}
                       </p>
                       {item.items && (
@@ -315,13 +257,11 @@ export const Header = () => {
                             <Link
                               key={subItem.title}
                               href={subItem.href}
-                              className="flex items-center justify-between py-2"
+                              className="flex items-center justify-between py-2 text-gray-600 hover:text-red-600 transition-colors"
                               onClick={() => setOpen(false)}
                             >
-                              <span className="text-sm text-muted-foreground">
-                                {subItem.title}
-                              </span>
-                              <MoveRight className="w-4 h-4 text-muted-foreground" />
+                              <span className="text-sm">{subItem.title}</span>
+                              <MoveRight className="w-4 h-4 text-gray-400" />
                             </Link>
                           ))}
                         </div>
@@ -332,10 +272,13 @@ export const Header = () => {
               ))}
 
               {/* Mobile CTA Buttons */}
-              <div className="pt-4 border-t space-y-3">
+              <div className="pt-4 border-t border-red-100 space-y-3">
                 <Button
-                  onClick={() => router.push("/contact")}
-                  className="w-full"
+                  onClick={() => {
+                    router.push("/contact");
+                    setOpen(false);
+                  }}
+                  className="w-full bg-red-600 hover:bg-red-700"
                 >
                   Book a demo
                 </Button>

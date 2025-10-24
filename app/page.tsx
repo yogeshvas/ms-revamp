@@ -15,7 +15,7 @@ export default function Home() {
       {/* <ContentSection /> */}
       <IntegrationsSection />
       <WallOfLoveSection />
-      <TeamSection />
+      {/* <TeamSection /> */}
     </>
   );
 }

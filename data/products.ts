@@ -4,18 +4,17 @@
 const contentData = {
   1: {
     hero: {
-      title: "Mamastops Logistics Solutions",
-      subtitle: "Transforming Logistics for the Digital Era",
+      title: "Mamastops Border Clearance Service",
+      subtitle: "Seamless, Cashless, and Hassle-Free Cross-Border Movement",
       description:
-        "Discover our comprehensive suite of logistics solutions, including cashless fuel payments, advanced GPS tracking, ERP systems, and supply chain finance, designed to streamline operations for logistics companies and fleet operators.",
+        "Mamastops makes cross-border logistics faster and simpler by offering secure, cashless clearance services. Our solution reduces waiting times at checkpoints, eliminates cash handling, and ensures your consignments move without unnecessary delays.",
       primaryButton: "Explore Solutions",
       secondaryButton: "Learn More",
     },
     mainContent: {
-      title: "Revolutionizing Logistics Operations",
+      title: "What is Mamastops Border Clearance?",
       paragraphs: [
-        "In an industry accounting for 15% of global GDP, logistics companies face challenges in digital fuel purchases, cash access, and working capital management. Mamastops provides innovative solutions to address these pain points, enabling seamless and efficient operations.",
-        "Our integrated platform offers cashless fuel payments, real-time fleet tracking, and a customized ERP system, empowering logistics businesses to optimize routes, reduce costs, and enhance customer satisfaction through cutting-edge technology.",
+        "Crossing borders can be one of the biggest bottlenecks for trucking companies - from paperwork delays to cash-based payments. Mamastops Border Clearance solves this by digitizing payments and simplifying the clearance process. With our platform, drivers and fleet managers get real-time updates, easy documentation handling, and faster approvals, making cross-border journeys smoother and more predictable",
       ],
       image:
         "https://www.mamastops.com/assets/img/project/logistics-solution.jpg",
@@ -24,49 +23,49 @@ const contentData = {
     features: {
       title: "Why Choose Mamastops?",
       subtitle:
-        "Unlock the power of our all-in-one logistics solutions tailored for modern fleet management",
+        "Unlock seamless cross-border movement with our smart, cashless clearance solutions designed for modern logistics.",
       items: [
         {
           icon: "CreditCard",
-          title: "Cashless Fuel Payments",
+          title: "Cashless Transactions",
           description:
-            "Enable secure, cashless fuel transactions at petrol stations using the Mamastops Driver app, reducing cash-handling risks.",
+            "Eliminate cash handling with secure digital payments at border checkpoints.",
         },
         {
           icon: "Shield",
-          title: "Advanced Security",
+          title: "Reduced Waiting Times",
           description:
-            "Protect transactions with robust encryption and fraud prevention, ensuring safe and reliable operations.",
+            "Faster clearance with streamlined processes and digital records.",
         },
         {
           icon: "Zap",
-          title: "Real-Time Tracking",
+          title: "Real-Time Updates",
           description:
-            "Monitor shipments with GPS tracking and AI video telematics for route optimization and proactive management.",
+            "Stay informed with instant notifications and status tracking.",
         },
         {
           icon: "Users",
-          title: "Employee Wallet System",
+          title: "Integrated with ERP & GPS",
           description:
-            "Allocate fuel allowances to employee wallets via the Mamastops platform for controlled and convenient spending.",
+            "Sync clearance data with fleet tracking and ERP for full visibility",
         },
         {
           icon: "Smartphone",
-          title: "Mobile Accessibility",
+          title: "Improved Compliance",
           description:
-            "Manage logistics on the go with the Mamastops Driver app, available on iOS and Android.",
+            "Ensure all documentation and regulatory requirements are met seamlessly.",
         },
         {
           icon: "DollarSign",
-          title: "Supply Chain Finance",
+          title: "Cost & Efficiency Gains",
           description:
-            "Access technology-based financing solutions to lower costs and improve efficiency for buyers and sellers.",
+            "Save time, reduce risks, and keep your trucks moving with fewer disruptions.",
         },
       ],
     },
     howItWorks: {
       title: "How Mamastops Works",
-      subtitle: "Simple steps to transform your logistics operations",
+      subtitle: "> Simple steps to get started with our Tracking Services",
       steps: [
         {
           step: "01",
@@ -112,26 +111,26 @@ const contentData = {
   },
   2: {
     hero: {
-      title: "Mamastops Cashless Facility",
-      subtitle: "Revolutionizing Fuel Payments for the Digital Age",
+      title: "Mamastops GPS Tracking Solution",
+      subtitle: "Track, monitor, and optimise every journey with ease",
       description:
-        "Experience seamless, secure, and efficient fuel transactions through our innovative cashless payment solution designed specifically for logistics companies and fleet operators.",
+        "Mamastops GPS Tracking gives you real-time fleet visibility, helping you monitor locations, optimise routes, and ensure on-time deliveries.",
       primaryButton: "Get Started Today",
       secondaryButton: "Learn More",
     },
     mainContent: {
-      title: "Embrace the Future of Fuel Payments",
+      title: "All-in-One Reporting for Smarter Logistics",
       paragraphs: [
-        "In today's dynamic landscape, digital payments have gained immense popularity among both consumers and merchants. Understanding this trend, MAMASTOPS brings forth an exciting opportunity for logistics companies to engage directly with consumers at petrol pumps.",
-        "Through our MAMASTOPS cashless facility, we offer a seamless and efficient transaction experience, providing users with the convenience they desire. This strategic partnership allows us to tap into an extensive network of petrol pumps, enabling us to reach a broader audience and adapt to their evolving payment preferences.",
+        "Mamastops GPS Tracking Solution goes beyond simple location tracking - it equips you with powerful insights to manage your fleet smarter. With detailed reports like event logs, stoppage analysis, overspeed alerts, and nearby vehicle tracking, you get complete visibility into driver behaviour and vehicle performance.",
+        "Our tool also simplifies trip and distance management with summaries by site, time, day, or month, helping you measure efficiency at every level. Whether it’s monitoring consignment journeys, mapping routes, or understanding fleet-wide kilometers covered, Mamastops GPSensures transparency, safety, and cost control, all in one easy-to-use platform.",
       ],
       image: "https://www.mamastops.com/assets/img/project/6.jpg",
       imageAlt: "Cashless Fuel Payment",
     },
     features: {
-      title: "Why Choose Mamastops Cashless?",
+      title: "Why Choose Mamastops GPS Tracking System?",
       subtitle:
-        "Discover the benefits that make our cashless facility the preferred choice for modern logistics",
+        "Reliable, real-time insights that keep your fleet moving smarter.",
       items: [
         {
           icon: "CreditCard",
@@ -172,40 +171,40 @@ const contentData = {
       ],
     },
     howItWorks: {
-      title: "How It Works",
-      subtitle: "Simple steps to get started with our cashless facility",
+      title: "How It Works?",
+      subtitle: "Simple steps to get started with ourTracking Services",
       steps: [
         {
           step: "01",
-          title: "Set Up Your Account",
+          title: "Install & Connectt",
           description:
-            "Register your company and set up employee wallets for fuel allowances through our platform.",
+            "Equip your trucks with Mamastops GPS devices and link them to your account",
         },
         {
           step: "02",
-          title: "Allocate Funds",
+          title: "Track in Real Time",
           description:
-            "Management can easily allocate fuel funds to employee wallets based on their requirements.",
+            "Monitor vehicle location, trips, and driver behavior instantly via web or mobile app.",
         },
         {
           step: "03",
-          title: "Fuel & Pay",
+          title: "Analyze & Optimize",
           description:
-            "Employees use the Mamastops Driver app to pay for fuel at any participating petrol station.",
+            "Use detailed reports and insights to improve efficiency, safety, and cost control.",
         },
       ],
     },
     benefits: {
       title: "Transforming Logistics Operations",
       description:
-        "By offering quick and secure digital payment options, we eliminate the need for cash transactions, reducing inefficiencies and enhancing convenience. With our cashless facility, you can easily settle payments, track transactions, and manage financial operations seamlessly.",
+        "By providing real-time tracking and intelligent monitoring, we eliminate guesswork in fleet management, reducing inefficiencies and enhancing control. With our GPS and IoT-enabled solutions, you can easily track vehicles, monitor performance, and manage operations seamlessly.",
       image: "https://www.mamastops.com/assets/img/project/13.jpg",
       imageAlt: "Digital Payment Benefits",
       points: [
-        "Eliminate cash handling and related security concerns",
-        "Real-time transaction tracking and financial visibility",
-        "Streamlined expense management and reporting",
-        "Improved operational efficiency and cost savings",
+        "Eliminate blind spots and improve fleet safety",
+        "Real-time visibility of vehicle location and driver behavior",
+        "Data-driven insights for smarter decision-making",
+        "Improved operational efficiency and reduced costs",
       ],
     },
     cta: {
@@ -219,100 +218,99 @@ const contentData = {
   3: {
     hero: {
       title: "Mamastops Fleet Management",
-      subtitle: "Advanced GPS Tracking & Fleet Optimization",
+      subtitle: "One platform to manage your entire logistics operation.",
       description:
-        "Take control of your fleet with our comprehensive GPS tracking system, real-time monitoring, and AI-powered analytics designed to maximize efficiency and reduce operational costs.",
+        "Our ERP system unifies fleet, driver, consignment, and financial management into a single dashboard. With real-time visibility and seamless integration, it streamlines workflows, improves decision-making, and reduces operational complexity.",
       primaryButton: "Track Your Fleet",
       secondaryButton: "Request Demo",
     },
     mainContent: {
-      title: "Complete Fleet Visibility & Control",
+      title: "Complete Logistics Control & Efficiency",
       paragraphs: [
-        "Modern fleet management requires more than just knowing where your vehicles are. Our advanced GPS tracking system provides comprehensive insights into vehicle performance, driver behavior, and route optimization opportunities.",
-        "With real-time monitoring, geofencing capabilities, and detailed analytics, you can make informed decisions that reduce fuel costs, improve delivery times, and enhance overall fleet performance while ensuring driver safety and compliance.",
+        " Modern logistics management requires more than tracking consignments - it demands full integration of fleet, drivers, services, and finances. Our advanced ERP system provides a unified platform to manage operations end-to-end with ease.",
+        "With real-time dashboards, seamless service integration, and intelligent reporting, you can make informed decisions that streamline workflows, cut costs, and boost overall efficiency while ensuring compliance and transparency across your logistics operations.",
       ],
       image: "https://www.mamastops.com/assets/img/project/fleet-tracking.jpg",
       imageAlt: "Fleet Management Dashboard",
     },
     features: {
-      title: "Advanced Fleet Management Features",
+      title: " Advanced Logistics Management Features",
       subtitle:
-        "Comprehensive tools to monitor, manage, and optimize your entire fleet operations",
+        "Comprehensive tools to integrate, streamline, and optimize every aspect of your logistics operations.",
       items: [
         {
           icon: "Zap",
-          title: "Real-Time GPS Tracking",
+          title: "Real-Time Visibility",
           description:
-            "Monitor vehicle locations, routes, and status updates in real-time with precise GPS tracking technology.",
+            "Access live dashboards and reports for instant decision-making",
         },
         {
           icon: "Shield",
-          title: "Driver Safety Monitoring",
+          title: "Unified Platform",
           description:
-            "Track driver behavior, speed violations, and safety metrics to ensure compliance and reduce risks.",
+            "Manage fleet, drivers, consignments, and finances in one integrated system",
         },
         {
           icon: "Smartphone",
-          title: "Mobile Fleet App",
+          title: "Seamless Service Integration",
           description:
-            "Manage your fleet on-the-go with our comprehensive mobile application for fleet managers.",
+            "Connect with fuel, toll, border clearance, and tracking solutions effortlessly.",
         },
         {
           icon: "Users",
-          title: "Driver Management",
+          title: "Scalable Architecture",
           description:
-            "Assign vehicles, track driver performance, and manage schedules efficiently through our platform.",
+            "Built on microservices to grow with your business needs.",
         },
         {
           icon: "CreditCard",
-          title: "Fuel Monitoring",
-          description:
-            "Track fuel consumption, detect fuel theft, and optimize fuel efficiency across your fleet.",
+          title: " Enhanced Control & Compliance",
+          description: "Ensure transparency and accuracy across operations.",
         },
         {
           icon: "DollarSign",
-          title: "Cost Analytics",
+          title: "Cost & Efficiency Gains",
           description:
-            "Analyze operational costs, maintenance schedules, and ROI metrics to maximize profitability.",
+            "Streamline workflows, reduce manual effort, and cut operational costs.",
         },
       ],
     },
     howItWorks: {
-      title: "How Fleet Management Works",
+      title: "How Mamastop ERP Works",
       subtitle:
         "Simple setup process to start tracking and managing your fleet",
       steps: [
         {
           step: "01",
-          title: "Install GPS Devices",
+          title: "Set Up Mamastops ERP in Your Systems",
           description:
-            "Install our advanced GPS tracking devices in your vehicles with professional installation support.",
+            "Easily configure the platform to onboard your fleet, drivers, consignments, and finances.",
         },
         {
           step: "02",
-          title: "Set Up Dashboard",
+          title: "Monitor & Manage in Real Time",
           description:
-            "Configure your fleet management dashboard with vehicle details, driver assignments, and operational parameters.",
+            " Track consignments, allocate resources, and access live dashboards for instant visibility.",
         },
         {
           step: "03",
-          title: "Monitor & Optimize",
+          title: "Analyse & Optimise",
           description:
-            "Track real-time data, analyze performance metrics, and implement optimization strategies for maximum efficiency.",
+            "Leverage reports and insights to cut costs, streamline workflows, and scale your logistics with confidence.",
         },
       ],
     },
     benefits: {
-      title: "Maximize Fleet Performance",
+      title: "Maximize Logistics Efficiency",
       description:
-        "Our fleet management solution provides complete visibility into your operations, enabling you to reduce costs, improve efficiency, and ensure compliance. With advanced analytics and real-time monitoring, you can make data-driven decisions that drive business growth.",
+        "Our ERP system unifies fleet, driver, consignment, and financial management into a single platform, helping you streamline operations, reduce costs, and ensure compliance. With real-time dashboards and advanced reporting, you can make smarter, data-driven decisions that accelerate business growth.",
       image: "https://www.mamastops.com/assets/img/project/fleet-benefits.jpg",
       imageAlt: "Fleet Performance Optimization",
       points: [
-        "Reduce fuel costs by up to 25% through route optimization",
-        "Improve driver safety and reduce insurance premiums",
-        "Increase fleet utilization and operational efficiency",
-        "Real-time alerts for maintenance and compliance requirements",
+        "Reduce administrative overhead with automated workflows",
+        "Improve visibility across consignments, services, and finances",
+        " Enhance resource utilization and overall operational efficiency",
+        "Real-time insights for compliance, transparency, and cost control",
       ],
     },
     cta: {
