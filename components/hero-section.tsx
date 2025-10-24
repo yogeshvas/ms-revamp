@@ -28,11 +28,11 @@ const HeroSection = () => {
             Streamline your logistics business with our innovative solutions.
           </p>
           <Button
-            onClick={() => router.push("/products")}
+            onClick={() => router.push("/contact")}
             size="lg"
             className="bg-primary hover:bg-primary/90 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300"
           >
-            Get Started
+            Get Onboarded
           </Button>
         </div>
       </div>
